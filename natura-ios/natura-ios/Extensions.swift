@@ -8,6 +8,10 @@
 
 import UIKit
 
+extension CGFloat {
+    static let defaultRadius : CGFloat = 5
+}
+
 extension UIProgressView {
 
     @IBInspectable var barHeight : CGFloat {
@@ -21,5 +25,15 @@ extension UIProgressView {
             transform = CGAffineTransform(scaleX: 1.0, y: heightScale)
             center = c
         }
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
     }
 }

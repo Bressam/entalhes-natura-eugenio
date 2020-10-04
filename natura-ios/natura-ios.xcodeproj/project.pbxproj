@@ -14,8 +14,12 @@
 		63C94397252A2ADC0075AEBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63C94396252A2ADC0075AEBF /* Assets.xcassets */; };
 		63C9439A252A2ADC0075AEBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63C94398252A2ADC0075AEBF /* LaunchScreen.storyboard */; };
 		63C943A2252A2FCB0075AEBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943A1252A2FCB0075AEBF /* Extensions.swift */; };
-		63C943A5252A38070075AEBF /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943A3252A38070075AEBF /* ProductsViewController.swift */; };
-		63C943A6252A38070075AEBF /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C943A4252A38070075AEBF /* ProductsViewController.xib */; };
+		63C943A8252A38D10075AEBF /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943A7252A38D10075AEBF /* ProductsViewController.swift */; };
+		63C943AB252A78C00075AEBF /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943A9252A78C00075AEBF /* ProductViewCell.swift */; };
+		63C943AC252A78C00075AEBF /* ProductViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C943AA252A78C00075AEBF /* ProductViewCell.xib */; };
+		63C943AE252A7AE70075AEBF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943AD252A7AE70075AEBF /* Model.swift */; };
+		63C943B1252A84FB0075AEBF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943AF252A84FB0075AEBF /* MessageViewController.swift */; };
+		63C943B2252A84FB0075AEBF /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C943B0252A84FB0075AEBF /* MessageViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +32,12 @@
 		63C94399252A2ADC0075AEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63C9439B252A2ADC0075AEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C943A1252A2FCB0075AEBF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		63C943A3252A38070075AEBF /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
-		63C943A4252A38070075AEBF /* ProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
+		63C943A7252A38D10075AEBF /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		63C943A9252A78C00075AEBF /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
+		63C943AA252A78C00075AEBF /* ProductViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductViewCell.xib; sourceTree = "<group>"; };
+		63C943AD252A7AE70075AEBF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		63C943AF252A84FB0075AEBF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		63C943B0252A84FB0075AEBF /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +72,18 @@
 			children = (
 				63C9438D252A2AD90075AEBF /* AppDelegate.swift */,
 				63C9438F252A2AD90075AEBF /* SceneDelegate.swift */,
+				63C943AD252A7AE70075AEBF /* Model.swift */,
 				63C94393252A2AD90075AEBF /* Main.storyboard */,
 				63C94391252A2AD90075AEBF /* MainViewController.swift */,
-				63C943A3252A38070075AEBF /* ProductsViewController.swift */,
-				63C943A4252A38070075AEBF /* ProductsViewController.xib */,
+				63C943A7252A38D10075AEBF /* ProductsViewController.swift */,
 				63C94396252A2ADC0075AEBF /* Assets.xcassets */,
 				63C94398252A2ADC0075AEBF /* LaunchScreen.storyboard */,
 				63C9439B252A2ADC0075AEBF /* Info.plist */,
 				63C943A1252A2FCB0075AEBF /* Extensions.swift */,
+				63C943A9252A78C00075AEBF /* ProductViewCell.swift */,
+				63C943AA252A78C00075AEBF /* ProductViewCell.xib */,
+				63C943AF252A84FB0075AEBF /* MessageViewController.swift */,
+				63C943B0252A84FB0075AEBF /* MessageViewController.xib */,
 			);
 			path = "natura-ios";
 			sourceTree = "<group>";
@@ -134,9 +146,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C943AC252A78C00075AEBF /* ProductViewCell.xib in Resources */,
+				63C943B2252A84FB0075AEBF /* MessageViewController.xib in Resources */,
 				63C9439A252A2ADC0075AEBF /* LaunchScreen.storyboard in Resources */,
 				63C94397252A2ADC0075AEBF /* Assets.xcassets in Resources */,
-				63C943A6252A38070075AEBF /* ProductsViewController.xib in Resources */,
 				63C94395252A2AD90075AEBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,11 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63C943AE252A7AE70075AEBF /* Model.swift in Sources */,
 				63C94392252A2AD90075AEBF /* MainViewController.swift in Sources */,
+				63C943B1252A84FB0075AEBF /* MessageViewController.swift in Sources */,
 				63C9438E252A2AD90075AEBF /* AppDelegate.swift in Sources */,
+				63C943AB252A78C00075AEBF /* ProductViewCell.swift in Sources */,
 				63C94390252A2AD90075AEBF /* SceneDelegate.swift in Sources */,
 				63C943A2252A2FCB0075AEBF /* Extensions.swift in Sources */,
-				63C943A5252A38070075AEBF /* ProductsViewController.swift in Sources */,
+				63C943A8252A38D10075AEBF /* ProductsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
