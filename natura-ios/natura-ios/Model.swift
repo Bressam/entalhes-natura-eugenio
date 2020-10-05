@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SensorType: Int {
+enum SensorType: Int, Codable {
     case voice = 0
     case heartBeat
     case fingerprint
@@ -39,13 +39,13 @@ enum ProductCategory: String, Codable {
     }
 }
 
-struct Product: Equatable {
+struct Product: Equatable, Codable {
     var name : String
     var description : String
     var image: String
 }
 
-class CreationData {
+class CreationData: Codable {
     var product: Product?
     var category: ProductCategory?
     var de: String?
@@ -54,6 +54,11 @@ class CreationData {
     var email: String?
     var mensagem: String?
     var sensorTipo: SensorType?
+    var machineId: Int = 0
+
+    enum CodingKeys: String, CodingKey  {
+        case de, para, relacao, email, mensagem, machineId
+    }
 }
 
 

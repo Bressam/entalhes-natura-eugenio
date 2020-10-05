@@ -15,6 +15,7 @@
 		634CB836252B67A900DA96DC /* ConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634CB834252B67A900DA96DC /* ConfirmationViewController.xib */; };
 		638C2D15252B4A9B003295C2 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C2D13252B4A9B003295C2 /* RecordViewController.swift */; };
 		638C2D16252B4A9B003295C2 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638C2D14252B4A9B003295C2 /* RecordViewController.xib */; };
+		63997154252BAE2500980A2B /* RESTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63997153252BAE2500980A2B /* RESTUtils.swift */; };
 		63C9438E252A2AD90075AEBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9438D252A2AD90075AEBF /* AppDelegate.swift */; };
 		63C94390252A2AD90075AEBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9438F252A2AD90075AEBF /* SceneDelegate.swift */; };
 		63C94392252A2AD90075AEBF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C94391252A2AD90075AEBF /* MainViewController.swift */; };
@@ -40,6 +41,7 @@
 		634CB834252B67A900DA96DC /* ConfirmationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationViewController.xib; sourceTree = "<group>"; };
 		638C2D13252B4A9B003295C2 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		638C2D14252B4A9B003295C2 /* RecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
+		63997153252BAE2500980A2B /* RESTUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTUtils.swift; sourceTree = "<group>"; };
 		63C9438A252A2AD90075AEBF /* natura-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "natura-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C9438D252A2AD90075AEBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C9438F252A2AD90075AEBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				632DF2A0252B76F300AD8933 /* EngravingViewController.xib */,
 				632DF2A4252B7A4200AD8933 /* DoneViewController.swift */,
 				632DF2A5252B7A4200AD8933 /* DoneViewController.xib */,
+				63997153252BAE2500980A2B /* RESTUtils.swift */,
 			);
 			path = "natura-ios";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				63C943AE252A7AE70075AEBF /* Model.swift in Sources */,
 				63C94392252A2AD90075AEBF /* MainViewController.swift in Sources */,
 				63C943B1252A84FB0075AEBF /* MessageViewController.swift in Sources */,
+				63997154252BAE2500980A2B /* RESTUtils.swift in Sources */,
 				632DF2A6252B7A4200AD8933 /* DoneViewController.swift in Sources */,
 				638C2D15252B4A9B003295C2 /* RecordViewController.swift in Sources */,
 				634CB835252B67A900DA96DC /* ConfirmationViewController.swift in Sources */,

@@ -40,7 +40,7 @@ class RecordViewController: UIViewController {
         plot.plotType = .rolling
         plot.shouldFill = true
         plot.shouldMirror = true
-        plot.gain = 10
+        plot.gain = 3
         plot.color = UIColor(named: "yellow")
         audioView.addSubview(plot)
     }
