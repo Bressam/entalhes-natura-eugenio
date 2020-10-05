@@ -44,6 +44,8 @@ class ProductViewCell: UICollectionViewCell {
         descriptionLabel.isHidden = false
         productName.isHidden = true
 
+        imageView.image = UIImage(named: category.image)
+
         productsCount.text = "\(count) produtos".uppercased()
         categoryTitle.text = category.title
         descriptionLabel.text = category.description

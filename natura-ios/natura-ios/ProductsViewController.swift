@@ -79,7 +79,7 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
                 let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
                 item.contentInsets.trailing = 20
 
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.37), heightDimension: .fractionalHeight(0.35)), subitems: [item])
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.37), heightDimension: .fractionalHeight(0.4)), subitems: [item])
 
                 group.contentInsets.top = 20
                 group.interItemSpacing = .none

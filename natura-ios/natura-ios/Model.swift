@@ -109,7 +109,6 @@ struct DataModel {
             Product(name: "BIOGRAFIA: Perfume BIOGRAFIA feminino", description: "Perfume Feminino", image: "p1_biografia"),
             Product(name: "LUNA: Perfume LUNA intenso", description: "Perfume Feminino", image: "p2_luna"),
             Product(name: "Essencial Exclusivo", description: "Perfume Feminino", image: "p3_essencial_feminino"),
-            Product(name: "Essencial Exclusivo", description: "Perfume Feminino", image: "p3_essencial_feminino"),
             Product(name: "Kaiak Aero", description: "Perfume Masculino", image: "p4_aero_masculino")]
 
         self.products[.cabelo] = cabelo
