@@ -22,6 +22,7 @@ class EngravingViewController: UIViewController {
                 self.navigationController?.mainViewController?.handleNextState()
             case .failure(let exception):
                 print(exception)
+                self.navigationController?.mainViewController?.handleNextState()
             }
         }
     }

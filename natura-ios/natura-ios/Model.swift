@@ -25,6 +25,15 @@ enum ProductCategory: String, Codable {
         return self.rawValue.capitalizingFirstLetter()
     }
 
+    var image: String {
+        switch self {
+        case .cabelo:
+            return ""
+        default:
+            return ""
+        }
+    }
+
     var description: String {
         switch self {
         case .cabelo:

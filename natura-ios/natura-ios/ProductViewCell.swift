@@ -33,6 +33,8 @@ class ProductViewCell: UICollectionViewCell {
         productName.text = product.name
         descriptionLabel.text = product.description
 
+        imageView.image = UIImage(named: product.image)
+
         handleSelection()
     }
 
