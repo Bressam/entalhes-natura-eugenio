@@ -20,6 +20,7 @@
 		63C943AE252A7AE70075AEBF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943AD252A7AE70075AEBF /* Model.swift */; };
 		63C943B1252A84FB0075AEBF /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C943AF252A84FB0075AEBF /* MessageViewController.swift */; };
 		63C943B2252A84FB0075AEBF /* MessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63C943B0252A84FB0075AEBF /* MessageViewController.xib */; };
+		8F712C989660324441CBCBC1 /* Pods_natura_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7180C12C21734B717D43F3C /* Pods_natura_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		63C943AD252A7AE70075AEBF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		63C943AF252A84FB0075AEBF /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		63C943B0252A84FB0075AEBF /* MessageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageViewController.xib; sourceTree = "<group>"; };
+		9C6444061DC575F8C3E171F6 /* Pods-natura-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natura-ios.release.xcconfig"; path = "Target Support Files/Pods-natura-ios/Pods-natura-ios.release.xcconfig"; sourceTree = "<group>"; };
+		A7180C12C21734B717D43F3C /* Pods_natura_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natura_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD9F7835351FBE97E94E6AE0 /* Pods-natura-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natura-ios.debug.xcconfig"; path = "Target Support Files/Pods-natura-ios/Pods-natura-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F712C989660324441CBCBC1 /* Pods_natura_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A4622275CDF8A895304FF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7180C12C21734B717D43F3C /* Pods_natura_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		63C94381252A2AD90075AEBF = {
 			isa = PBXGroup;
 			children = (
 				63C9438C252A2AD90075AEBF /* natura-ios */,
 				63C9438B252A2AD90075AEBF /* Products */,
+				80BA6612B2EBBEABF2D6A0CA /* Pods */,
+				21A4622275CDF8A895304FF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +103,16 @@
 			path = "natura-ios";
 			sourceTree = "<group>";
 		};
+		80BA6612B2EBBEABF2D6A0CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD9F7835351FBE97E94E6AE0 /* Pods-natura-ios.debug.xcconfig */,
+				9C6444061DC575F8C3E171F6 /* Pods-natura-ios.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63C9439E252A2ADC0075AEBF /* Build configuration list for PBXNativeTarget "natura-ios" */;
 			buildPhases = (
+				DC2DB7E83795ACD5AFA4C6AC /* [CP] Check Pods Manifest.lock */,
 				63C94386252A2AD90075AEBF /* Sources */,
 				63C94387252A2AD90075AEBF /* Frameworks */,
 				63C94388252A2AD90075AEBF /* Resources */,
+				6D899441B99CEC3B95E01CF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +182,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D899441B99CEC3B95E01CF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-natura-ios/Pods-natura-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-natura-ios/Pods-natura-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-natura-ios/Pods-natura-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC2DB7E83795ACD5AFA4C6AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-natura-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63C94386252A2AD90075AEBF /* Sources */ = {
@@ -310,6 +379,7 @@
 		};
 		63C9439F252A2ADC0075AEBF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD9F7835351FBE97E94E6AE0 /* Pods-natura-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +398,7 @@
 		};
 		63C943A0252A2ADC0075AEBF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C6444061DC575F8C3E171F6 /* Pods-natura-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
