@@ -52,7 +52,7 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
 
         self.collectionView!.register(ProductHeader.self, forSupplementaryViewOfKind: categoryHeader, withReuseIdentifier: reuseHeader)
 
-        data = DataModel.shared.data
+        data = DataModel.shared.products
         produtoSelecionado = data[categoriaSelecionada]?.first
 
         collectionView.reloadData()
@@ -164,5 +164,13 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
         }
         collectionView.reloadData()
     }
+}
+
+extension ProductsViewController: CreationDelegate {
+    func updateData() {
+        DataModel.shared.data.category = categoriaSelecionada
+        DataModel.shared.data.product = produtoSelecionado
+    }
+
 
 }

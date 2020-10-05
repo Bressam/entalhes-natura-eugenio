@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManager
 
 class MessageViewController: UIViewController {
 
@@ -18,12 +19,13 @@ class MessageViewController: UIViewController {
 
     @IBOutlet var sensoresViews : [UIView] = []
 
-    var sensorSelecionado: Int = 0
+    var sensorSelecionado: SensorType = .voice
 
     var relacaoOpcoes: [String] = [
         "Amigos(as)",
         "Esposo(a)",
         "Namorado(a)",
+        "Eu mesmo(a)",
         "Mãe/Pai",
         "Filho(a)",
         "Outro"
@@ -36,7 +38,15 @@ class MessageViewController: UIViewController {
 
         picker.delegate = self
         picker.dataSource = self
+
         tfRelacao.inputView = picker
+        tfRelacao.delegate = self
+
+        tfRelacao.text = relacaoOpcoes.first
+
+        [tfRelacao, tfDe, tfEmail, tfPara, tfMensagem].forEach {
+            $0.addTarget(self, action: #selector(handleSelected), for: .touchDown)
+        }
 
         sensoresViews.forEach { view in
             view.layer.cornerRadius = CGFloat.defaultRadius * 2
@@ -46,15 +56,31 @@ class MessageViewController: UIViewController {
         atualizarSensor()
     }
 
+    @objc func handleSelected(_ textfield: UITextField) {
+        [tfRelacao, tfDe, tfEmail, tfPara, tfMensagem].forEach {
+            if let tf = $0 as? UITextField {
+                if tf == textfield {
+                    tf.layer.borderColor = UIColor(named: "yellow")!.cgColor
+                    tf.layer.borderWidth = 1
+                    tf.generateShadow()
+                } else {
+                    tf.layer.borderWidth = 0
+                    tf.generateShadow(color: UIColor.systemGray2)
+                }
+            }
+        }
+    }
+
     @objc func handleSensorSelected(_ gesture: UITapGestureRecognizer) {
         let tag = gesture.view?.tag ?? 0
-        sensorSelecionado = tag
+        guard let sensor = SensorType(rawValue: tag) else { return }
+        sensorSelecionado = sensor
         atualizarSensor()
     }
 
     func atualizarSensor() {
         sensoresViews.forEach { view in
-            if view.tag == sensorSelecionado {
+            if view.tag == sensorSelecionado.rawValue {
                 view.layer.borderColor = UIColor(named: "yellow")!.cgColor
                 view.layer.borderWidth = 1
                 view.generateShadow()
@@ -77,6 +103,20 @@ class MessageViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+}
+
+extension MessageViewController: CreationDelegate, UITextFieldDelegate {
+    func updateData() {
+        DataModel.shared.data.de = tfDe.text
+        DataModel.shared.data.para = tfPara.text
+        DataModel.shared.data.relacao = tfRelacao.text
+        DataModel.shared.data.email = tfEmail.text
+        DataModel.shared.data.mensagem = tfMensagem.text
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
 }
 
 extension MessageViewController: UIPickerViewDelegate, UIPickerViewDataSource {

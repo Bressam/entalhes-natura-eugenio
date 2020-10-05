@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		632DF2A1252B76F300AD8933 /* EngravingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DF29F252B76F300AD8933 /* EngravingViewController.swift */; };
+		632DF2A2252B76F300AD8933 /* EngravingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632DF2A0252B76F300AD8933 /* EngravingViewController.xib */; };
+		632DF2A6252B7A4200AD8933 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632DF2A4252B7A4200AD8933 /* DoneViewController.swift */; };
+		632DF2A7252B7A4200AD8933 /* DoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632DF2A5252B7A4200AD8933 /* DoneViewController.xib */; };
+		634CB835252B67A900DA96DC /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634CB833252B67A900DA96DC /* ConfirmationViewController.swift */; };
+		634CB836252B67A900DA96DC /* ConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 634CB834252B67A900DA96DC /* ConfirmationViewController.xib */; };
+		638C2D15252B4A9B003295C2 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638C2D13252B4A9B003295C2 /* RecordViewController.swift */; };
+		638C2D16252B4A9B003295C2 /* RecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 638C2D14252B4A9B003295C2 /* RecordViewController.xib */; };
 		63C9438E252A2AD90075AEBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9438D252A2AD90075AEBF /* AppDelegate.swift */; };
 		63C94390252A2AD90075AEBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9438F252A2AD90075AEBF /* SceneDelegate.swift */; };
 		63C94392252A2AD90075AEBF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C94391252A2AD90075AEBF /* MainViewController.swift */; };
@@ -24,6 +32,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		632DF29F252B76F300AD8933 /* EngravingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngravingViewController.swift; sourceTree = "<group>"; };
+		632DF2A0252B76F300AD8933 /* EngravingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EngravingViewController.xib; sourceTree = "<group>"; };
+		632DF2A4252B7A4200AD8933 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		632DF2A5252B7A4200AD8933 /* DoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoneViewController.xib; sourceTree = "<group>"; };
+		634CB833252B67A900DA96DC /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		634CB834252B67A900DA96DC /* ConfirmationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmationViewController.xib; sourceTree = "<group>"; };
+		638C2D13252B4A9B003295C2 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		638C2D14252B4A9B003295C2 /* RecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewController.xib; sourceTree = "<group>"; };
 		63C9438A252A2AD90075AEBF /* natura-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "natura-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C9438D252A2AD90075AEBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63C9438F252A2AD90075AEBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +115,14 @@
 				63C943AA252A78C00075AEBF /* ProductViewCell.xib */,
 				63C943AF252A84FB0075AEBF /* MessageViewController.swift */,
 				63C943B0252A84FB0075AEBF /* MessageViewController.xib */,
+				638C2D13252B4A9B003295C2 /* RecordViewController.swift */,
+				638C2D14252B4A9B003295C2 /* RecordViewController.xib */,
+				634CB833252B67A900DA96DC /* ConfirmationViewController.swift */,
+				634CB834252B67A900DA96DC /* ConfirmationViewController.xib */,
+				632DF29F252B76F300AD8933 /* EngravingViewController.swift */,
+				632DF2A0252B76F300AD8933 /* EngravingViewController.xib */,
+				632DF2A4252B7A4200AD8933 /* DoneViewController.swift */,
+				632DF2A5252B7A4200AD8933 /* DoneViewController.xib */,
 			);
 			path = "natura-ios";
 			sourceTree = "<group>";
@@ -109,7 +133,6 @@
 				BD9F7835351FBE97E94E6AE0 /* Pods-natura-ios.debug.xcconfig */,
 				9C6444061DC575F8C3E171F6 /* Pods-natura-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,7 +200,11 @@
 				63C943B2252A84FB0075AEBF /* MessageViewController.xib in Resources */,
 				63C9439A252A2ADC0075AEBF /* LaunchScreen.storyboard in Resources */,
 				63C94397252A2ADC0075AEBF /* Assets.xcassets in Resources */,
+				632DF2A7252B7A4200AD8933 /* DoneViewController.xib in Resources */,
+				632DF2A2252B76F300AD8933 /* EngravingViewController.xib in Resources */,
 				63C94395252A2AD90075AEBF /* Main.storyboard in Resources */,
+				634CB836252B67A900DA96DC /* ConfirmationViewController.xib in Resources */,
+				638C2D16252B4A9B003295C2 /* RecordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,9 +257,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632DF2A1252B76F300AD8933 /* EngravingViewController.swift in Sources */,
 				63C943AE252A7AE70075AEBF /* Model.swift in Sources */,
 				63C94392252A2AD90075AEBF /* MainViewController.swift in Sources */,
 				63C943B1252A84FB0075AEBF /* MessageViewController.swift in Sources */,
+				632DF2A6252B7A4200AD8933 /* DoneViewController.swift in Sources */,
+				638C2D15252B4A9B003295C2 /* RecordViewController.swift in Sources */,
+				634CB835252B67A900DA96DC /* ConfirmationViewController.swift in Sources */,
 				63C9438E252A2AD90075AEBF /* AppDelegate.swift in Sources */,
 				63C943AB252A78C00075AEBF /* ProductViewCell.swift in Sources */,
 				63C94390252A2AD90075AEBF /* SceneDelegate.swift in Sources */,
@@ -385,6 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4WWUKZ3FSZ;
 				INFOPLIST_FILE = "natura-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.livetouch.natura-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -404,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4WWUKZ3FSZ;
 				INFOPLIST_FILE = "natura-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,7 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.livetouch.natura-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().shouldResignOnTouchOutside = true
         IQKeyboardManager.shared().toolbarDoneBarButtonItemText = "Feito"
+
         return true
     }
 

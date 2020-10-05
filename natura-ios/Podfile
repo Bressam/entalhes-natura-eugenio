@@ -7,5 +7,6 @@ target 'natura-ios' do
 
   # Pods for natura-ios
   pod 'IQKeyboardManager'
+  pod "SoundWave"
 	
 end

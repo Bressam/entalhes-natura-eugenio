@@ -8,44 +8,6 @@
 
 import UIKit
 
-enum CreationState: Int {
-    case product = 1
-    case message
-    case confirmation
-    case engrave
-    case done
-
-    var next : CreationState {
-        return CreationState(rawValue: self.rawValue + 1) ?? self
-    }
-
-    var previous : CreationState {
-        return CreationState(rawValue: self.rawValue - 1) ?? self
-    }
-
-    var vc : UIViewController? {
-        switch self {
-        case .message:
-            let vc = MessageViewController()
-            return vc
-        case .confirmation:
-            let vc = UIViewController()
-            vc.view.backgroundColor = .green
-            return vc
-        case .engrave:
-            let vc = UIViewController()
-            vc.view.backgroundColor = .orange
-            return vc
-        case .done:
-            let vc = UIViewController()
-            vc.view.backgroundColor = .red
-            return vc
-        default:
-            return nil
-        }
-    }
-}
-
 class MainViewController: UIViewController {
 
     @IBOutlet weak var backButton: UIButton!
@@ -53,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var creationProgress: UIProgressView!
     @IBOutlet weak var stackStepsLabel: UIStackView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
 
     var stepsLabels : [UILabel] = []
 
@@ -112,32 +75,47 @@ class MainViewController: UIViewController {
     fileprivate func updateState(oldState: CreationState) {
         guard let childNavigation = childNavigation else { return }
 
-        backButton.isHidden = state == .product
+        if let vc = childNavigation.topViewController as? CreationDelegate {
+            vc.updateData()
+        }
 
         for (index, label) in stepsLabels.enumerated() {
-            if index < state.rawValue {
+            if index < Int(state.progress / 0.25) {
                 label.textColor = UIColor(named: "yellow") ?? .yellow
             } else {
                 label.textColor = UIColor.systemGray2
             }
         }
 
-        creationProgress.setProgress(Float(state.rawValue) * 0.25, animated: true)
+        titleLabel.text = state.title
+
+        creationProgress.setProgress(state.progress, animated: true)
 
         if state == .confirmation {
             nextButton.setTitle("Confirmar", for: .normal)
-        } else if state == .engrave {
+        } else if state == .engrave || state == .done  {
             backButton.isHidden = true
             nextButton.isHidden = true
+        } else if state == .product {
+            backButton.isHidden = true
+            nextButton.isHidden = false
+            nextButton.setTitle("Próximo", for: .normal)
         } else {
+            backButton.isHidden = false
+            nextButton.isHidden = false
             nextButton.setTitle("Próximo", for: .normal)
         }
 
-        if oldState.rawValue > state.rawValue {
-            childNavigation.popViewController(animated: true)
+
+        if oldState == .done {
+            childNavigation.popToRootViewController(animated: true)
         } else {
-            if let vc = state.vc {
-                childNavigation.pushViewController(vc, animated: true)
+            if oldState.rawValue > state.rawValue {
+                childNavigation.popViewController(animated: true)
+            } else {
+                if let vc = state.vc {
+                    childNavigation.pushViewController(vc, animated: true)
+                }
             }
         }
     }

@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-natura-ios/Pods-natura-ios-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/SoundWave/SoundWave.framework

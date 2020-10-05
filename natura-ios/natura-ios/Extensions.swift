@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension UINavigationController {
+    var mainViewController : MainViewController? {
+        return self.parent as? MainViewController
+    }
+}
+
 extension CGFloat {
     static let defaultRadius : CGFloat = 5
 }
@@ -62,6 +68,8 @@ class TextField: UITextField {
         super.awakeFromNib()
         layer.cornerRadius = CGFloat.defaultRadius
         tintColor = UIColor(named: "yellow") ?? .yellow
+
+        generateShadow(color: .systemGray2)
     }
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
