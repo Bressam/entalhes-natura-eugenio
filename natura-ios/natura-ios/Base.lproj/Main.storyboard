@@ -40,6 +40,7 @@
                                                             <constraint firstAttribute="height" constant="22" id="jIV-pf-7OT"/>
                                                         </constraints>
                                                         <color key="progressTintColor" name="orange"/>
+                                                        <color key="trackTintColor" red="0.89411764705882346" green="0.73395520449999996" blue="0.34107518199999998" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="barHeight">
                                                                 <real key="value" value="1"/>

@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1C4-i7-oYA">
-                    <rect key="frame" x="281.5" y="409.5" width="205" height="205"/>
+                    <rect key="frame" x="281.5" y="509.5" width="205" height="205"/>
                     <color key="backgroundColor" name="yellow"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="1C4-i7-oYA" secondAttribute="height" id="1zs-uj-NMy"/>
@@ -38,14 +38,14 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKY-aU-kLq">
-                    <rect key="frame" x="303" y="634.5" width="162" height="35"/>
+                    <rect key="frame" x="303" y="734.5" width="162" height="35"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                     <state key="normal" title="Gravar Novamente">
                         <color key="titleColor" name="yellow"/>
                     </state>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-sx-xfS" customClass="AudioVisualizationView" customModule="SoundWave">
-                    <rect key="frame" x="153.5" y="113.5" width="461" height="256"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZ3-sx-xfS" customClass="EZAudioPlot">
+                    <rect key="frame" x="153.5" y="153.5" width="461" height="256"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -54,10 +54,10 @@
             <constraints>
                 <constraint firstItem="1C4-i7-oYA" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="Cha-YE-OLw"/>
                 <constraint firstItem="OKY-aU-kLq" firstAttribute="centerX" secondItem="1C4-i7-oYA" secondAttribute="centerX" id="D2h-I6-2Gx"/>
-                <constraint firstItem="1C4-i7-oYA" firstAttribute="top" secondItem="aZ3-sx-xfS" secondAttribute="bottom" constant="40" id="D8p-wH-JuC"/>
+                <constraint firstItem="1C4-i7-oYA" firstAttribute="top" secondItem="aZ3-sx-xfS" secondAttribute="bottom" constant="100" id="D8p-wH-JuC"/>
                 <constraint firstItem="1C4-i7-oYA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JA3-KY-uGq"/>
                 <constraint firstItem="aZ3-sx-xfS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="Q3l-8U-mSr"/>
-                <constraint firstItem="1C4-i7-oYA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bxB-Nh-AI5"/>
+                <constraint firstItem="1C4-i7-oYA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="100" id="bxB-Nh-AI5"/>
                 <constraint firstItem="aZ3-sx-xfS" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25" id="f6p-eu-KdU"/>
                 <constraint firstItem="aZ3-sx-xfS" firstAttribute="centerX" secondItem="1C4-i7-oYA" secondAttribute="centerX" id="ihw-vT-Aug"/>
                 <constraint firstItem="OKY-aU-kLq" firstAttribute="top" secondItem="1C4-i7-oYA" secondAttribute="bottom" constant="20" id="tRB-O8-xJ7"/>

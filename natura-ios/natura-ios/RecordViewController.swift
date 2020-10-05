@@ -7,14 +7,19 @@
 //
 
 import UIKit
-import SoundWave
-
-
+import AudioKit
+import AudioKitUI
 
 class RecordViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var againButton: UIButton!
-    @IBOutlet weak var audioView: AudioVisualizationView!
+    @IBOutlet weak var audioView: EZAudioPlot!
+
+    var mic : AKMicrophone!
+    var micTracker : AKMicrophoneTracker!
+    var tracker: AKFrequencyTracker!
+    var silence: AKBooster!
+    var plot : AKNodeOutputPlot!
 
     enum RecordState {
         case initial
@@ -29,11 +34,61 @@ class RecordViewController: UIViewController {
         }
     }
 
+    func setupPlot() {
+        plot = AKNodeOutputPlot(tracker, frame: audioView.bounds)
+        plot.backgroundColor = .clear
+        plot.plotType = .rolling
+        plot.shouldFill = true
+        plot.shouldMirror = true
+        plot.gain = 10
+        plot.color = UIColor(named: "yellow")
+        audioView.addSubview(plot)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        AKSettings.audioInputEnabled = true
+
+        AKSettings.sampleRate = AKManager.engine.inputNode.inputFormat(forBus: 0).sampleRate
+
+        mic = AKMicrophone()
+        tracker = AKFrequencyTracker(mic)
+        silence = AKBooster(tracker, gain: 0)
+
+        setupPlot()
+
         setupViews()
         updateState()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        AKManager.output = silence
+
+        AKSettings.defaultToSpeaker = true
+        AKSettings.audioInputEnabled = true
+
+        do {
+            try AKManager.start()
+        } catch {
+            AKLog("AudioKit did not start!")
+        }
+    }
+
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        do {
+            try AKManager.stop()
+            AKManager.output = nil
+        } catch {
+            AKLog("AudioKit did not start!")
+        }
+    }
+
 
     func setupViews() {
         actionButton.generateShadow()
@@ -46,15 +101,22 @@ class RecordViewController: UIViewController {
             againButton.isHidden = true
             audioView.isHidden = true
             actionButton.setImage(UIImage(systemName: "mic.fill"), for: .normal)
+            plot.pause()
+            plot.redraw()
+            plot.node = nil
         } else if state == .recording {
             againButton.isHidden = true
             actionButton.setImage(UIImage(systemName: "stop.fill"), for: .normal)
             audioView.isHidden = false
+            plot.node = mic
+            plot.resume()
         } else if state == .stop {
+            plot.pause()
             againButton.isHidden = false
             actionButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             audioView.isHidden = false
         } else if state == .play {
+            plot.resume()
             audioView.isHidden = false
             againButton.isHidden = false
             actionButton.setImage(UIImage(systemName: "stop.fill"), for: .normal)

@@ -105,7 +105,7 @@ enum CreationState: Int {
         case .engrave:
             return "Mais um pouquinho..."
         case .done:
-            return "Tudo pronto!"
+            return ""
         }
     }
 
