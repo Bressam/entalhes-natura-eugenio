@@ -37,3 +37,64 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
 }
+
+extension UIView {
+    func generateShadow(color: UIColor? = nil) {
+        let color = color ?? UIColor(named: "yellow")!
+
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = .init(width: 0, height: 10)
+        self.layer.shadowRadius = 10
+    }
+
+    func clearShadow() {
+        self.layer.shadowColor = UIColor.clear.cgColor
+    }
+}
+
+
+class TextField: UITextField {
+
+    let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.cornerRadius = CGFloat.defaultRadius
+        tintColor = UIColor(named: "yellow") ?? .yellow
+    }
+
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+}
+
+extension UIImage {
+    static func gradientImage(with bounds: CGRect,
+                            colors: [CGColor],
+                            locations: [NSNumber]?) -> UIImage? {
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors
+        // This makes it horizontal
+        gradientLayer.startPoint = CGPoint(x: 0.0,
+                                        y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1.0,
+                                        y: 0.5)
+
+        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
+        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return image
+    }
+}

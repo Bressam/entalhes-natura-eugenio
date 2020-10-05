@@ -40,7 +40,8 @@ class ProductHeader: UICollectionReusableView {
 
 class ProductsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var categoria : ProductCategory = .cabelo
+    var categoriaSelecionada : ProductCategory = .cabelo
+    var produtoSelecionado : Product?
     var data: [ProductCategory : [Product]] = [:]
 
     override func viewDidLoad() {
@@ -52,6 +53,8 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
         self.collectionView!.register(ProductHeader.self, forSupplementaryViewOfKind: categoryHeader, withReuseIdentifier: reuseHeader)
 
         data = DataModel.shared.data
+        produtoSelecionado = data[categoriaSelecionada]?.first
+
         collectionView.reloadData()
     }
 
@@ -90,8 +93,8 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
                 .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(30)), elementKind: categoryHeader, alignment: .topLeading)
             ]
 
-            section.contentInsets.leading = UIScreen.main.bounds.width * 0.06
-            section.contentInsets.trailing = UIScreen.main.bounds.width * 0.06 - 20
+            section.contentInsets.leading = UIScreen.main.bounds.width * 0.07
+            section.contentInsets.trailing = UIScreen.main.bounds.width * 0.07 - 20
 
             return section
         }
@@ -109,7 +112,7 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let categorias = data.keys.count
-        let produtos = data[categoria]?.count ?? 0
+        let produtos = data[categoriaSelecionada]?.count ?? 0
         return section == 0 ? categorias : produtos
     }
 
@@ -118,13 +121,15 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
 
         if let cell = cell as? ProductViewCell {
             if indexPath.section != 0 {
-                let produto = data[self.categoria]![indexPath.row]
+                let produto = data[self.categoriaSelecionada]![indexPath.row]
+                cell.isSelected = (produto == produtoSelecionado)
                 cell.configure(product: produto)
             } else {
-                 let produtos = data[categoria]?.count ?? 0
-                cell.configure(category: self.categoria, count: produtos)
+                let categoria = Array(data.keys)[indexPath.row]
+                let produtos = data[categoria]?.count ?? 0
+                cell.isSelected = (categoriaSelecionada == categoria)
+                cell.configure(category: categoria, count: produtos)
             }
-
         }
         return cell
     }
@@ -132,7 +137,7 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeader, for: indexPath)
 
-        let texto = indexPath.section == 0 ? "Nossos Produtos" : categoria.title
+        let texto = indexPath.section == 0 ? "Nossos Produtos" : categoriaSelecionada.title
 
         if let header = header as? ProductHeader {
             header.configure(text: texto, hidden: false)
@@ -146,6 +151,18 @@ class ProductsViewController: UICollectionViewController, UICollectionViewDelega
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section != 0 {
+            let produto = data[self.categoriaSelecionada]![indexPath.row]
+            produtoSelecionado = produto
+        } else {
+            let categoria = Array(data.keys)[indexPath.row]
+            categoriaSelecionada = categoria
+            produtoSelecionado = data[categoriaSelecionada]?.first
+        }
+        collectionView.reloadData()
     }
 
 }

@@ -32,7 +32,7 @@ enum ProductCategory: String, Codable {
     }
 }
 
-struct Product {
+struct Product: Equatable {
     var name : String
     var description : String
     var image: String
