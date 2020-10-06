@@ -52,10 +52,14 @@ class ConfirmationViewController: UIViewController {
 
         let nib = UINib(nibName: "ProductViewCell", bundle: nil)
         if var cell = nib.instantiate(withOwner: self, options: nil)[0] as? ProductViewCell {
+            productStack.addArrangedSubview(cell)
+            cell.translatesAutoresizingMaskIntoConstraints = false
+            cell.widthAnchor.constraint(equalToConstant: 220).isActive = true
+            cell.heightAnchor.constraint(equalTo: sensorView.heightAnchor).isActive = true
             cell.isSelected = true
             cell.configure(product: product)
             cell.frame.size.height = sensorView.frame.height
-            productStack.addArrangedSubview(cell)
+
         }
     }
 

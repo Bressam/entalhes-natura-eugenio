@@ -1,20 +1,25 @@
 PODS:
+  - AudioKit (4.11.2):
+    - AudioKit/Core (= 4.11.2)
+    - AudioKit/UI (= 4.11.2)
+  - AudioKit/Core (4.11.2)
+  - AudioKit/UI (4.11.2):
+    - AudioKit/Core
   - IQKeyboardManager (6.5.6)
-  - SoundWave (0.1.4)
 
 DEPENDENCIES:
+  - AudioKit
   - IQKeyboardManager
-  - SoundWave
 
 SPEC REPOS:
   trunk:
+    - AudioKit
     - IQKeyboardManager
-    - SoundWave
 
 SPEC CHECKSUMS:
+  AudioKit: 57cc61d708f085763a031e5c3f87adae21dc4b59
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  SoundWave: d98ffaa863570b29d991da32a09b7ce1b4aaf2d4
 
-PODFILE CHECKSUM: 5cca271912190df5418282a14b26430446f1bc5e
+PODFILE CHECKSUM: 1766f2c753cbbaa28ae2dc8c70b30b20e7699585
 
 COCOAPODS: 1.9.3

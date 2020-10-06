@@ -33,6 +33,8 @@ class ProductViewCell: UICollectionViewCell {
         productName.text = product.name
         descriptionLabel.text = product.description
 
+        imageView.image = UIImage(named: product.image)
+
         handleSelection()
     }
 
@@ -41,6 +43,8 @@ class ProductViewCell: UICollectionViewCell {
         categoryTitle.isHidden = false
         descriptionLabel.isHidden = false
         productName.isHidden = true
+
+        imageView.image = UIImage(named: category.image)
 
         productsCount.text = "\(count) produtos".uppercased()
         categoryTitle.text = category.title

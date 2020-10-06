@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SensorType: Int {
+enum SensorType: Int, Codable {
     case voice = 0
     case heartBeat
     case fingerprint
@@ -25,6 +25,21 @@ enum ProductCategory: String, Codable {
         return self.rawValue.capitalizingFirstLetter()
     }
 
+    var image: String {
+        switch self {
+        case .cabelo:
+            return "c1_shampoo_patua"
+        case .rosto:
+            return "r1_agua_miscelar"
+        case .perfumaria:
+            return "p1_biografia"
+        case .maquiagem:
+            return "m1_pincel_blush_aquarela"
+        default:
+            return "p1_biografia"
+        }
+    }
+
     var description: String {
         switch self {
         case .cabelo:
@@ -39,13 +54,13 @@ enum ProductCategory: String, Codable {
     }
 }
 
-struct Product: Equatable {
+struct Product: Equatable, Codable {
     var name : String
     var description : String
     var image: String
 }
 
-class CreationData {
+class CreationData: Codable {
     var product: Product?
     var category: ProductCategory?
     var de: String?
@@ -54,6 +69,11 @@ class CreationData {
     var email: String?
     var mensagem: String?
     var sensorTipo: SensorType?
+    var machineId: Int = 0
+
+    enum CodingKeys: String, CodingKey  {
+        case de, para, relacao, email, mensagem, machineId
+    }
 }
 
 
@@ -69,18 +89,33 @@ struct DataModel {
 
     private init() {
         let cabelo = [
-            Product(name: "Natura Lumina", description: "Shampoo/Condicionar", image: "lumina"),
-            Product(name: "Natura Lumina", description: "Máscara de tratamento", image: "lumina"),
-            Product(name: "Plant", description: "Shampoo/Condicionar", image: "lumina"),
-            Product(name: "Plant", description: "Máscara de tratamento", image: "lumina"),
-            Product(name: "Ekos Patauá", description: "Shampoo/Condicionar", image: "lumina")]
-
+            Product(name: "EKOS: Shampoo Patuá", description: "Shampoo/Condicionar", image: "c1_shampoo_patua"),
+            Product(name: "LUMINA: Máscara fortificante cabelos crespos", description: "Máscara fortificante", image: "c2_lumina_mascara_cabelos_crespos"),
+            Product(name: "LUMINA: Condicionador provitalidade", description: "Condicionador", image: "c3_condicionador_provitalidade"),
+            Product(name: "EKOS: Shampoo Morumoru", description: "Shampoo", image: "c4_shampoo_morumoru"),
+            Product(name: "PLANT: Condicionador hidratação reparadora", description: "Condicionador", image: "c5_condicionador_hidratacao_reparadora")]
+        
         let maquiagem = [
-            Product(name: "Natura", description: "Batom", image: "lumina")
-        ]
+            Product(name: "Aquarela: Pincel, pó e blush", description: "Pincel, pó e blush aquarela", image: "m1_pincel_blush_aquarela"),
+            Product(name: "UNA - Base Matte", description: "Maquinagem", image: "m2_base_matte"),
+            Product(name: "UNA: Maxxi Palette de sombras - 12 tons intensa una", description: "Paleta de sombras", image: "m3_paleta_maxxi")]
+        
+        let rosto = [
+            Product(name: "CHRONOS: Água micelar purificante ", description: "Água micelar CHRONOS", image: "r1_agua_miscelar"),
+            Product(name: "CHRONOS: Espuma de limpeza suave", description: "Espuma de limpeza CHRONOS", image: "r2_espuma_limpeza_suave"),
+            Product(name: "CHRONOS: Sistema de tratamento antissinais", description: "Tratamento antissinais CHRONOS", image: "r3_tratamento_antissinais"),
+            Product(name: "CHRONOS: Tônico Detox adstringente", description: "Tônico detox CHRONOS", image: "r4_tonico_detox_adistringente")]
+        
+        let perfumaria = [
+            Product(name: "BIOGRAFIA: Perfume BIOGRAFIA feminino", description: "Perfume Feminino", image: "p1_biografia"),
+            Product(name: "LUNA: Perfume LUNA intenso", description: "Perfume Feminino", image: "p2_luna"),
+            Product(name: "Essencial Exclusivo", description: "Perfume Feminino", image: "p3_essencial_feminino"),
+            Product(name: "Kaiak Aero", description: "Perfume Masculino", image: "p4_aero_masculino")]
 
         self.products[.cabelo] = cabelo
         self.products[.maquiagem] = maquiagem
+        self.products[.rosto] = rosto
+        self.products[.perfumaria] = perfumaria
     }
 }
 
@@ -105,7 +140,7 @@ enum CreationState: Int {
         case .engrave:
             return "Mais um pouquinho..."
         case .done:
-            return "Tudo pronto!"
+            return ""
         }
     }
 

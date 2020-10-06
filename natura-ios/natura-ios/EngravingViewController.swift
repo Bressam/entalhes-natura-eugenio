@@ -13,8 +13,17 @@ class EngravingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
-            self.navigationController?.mainViewController?.handleNextState()
+        let service = RESTUtils()
+        let data = DataModel.shared.data
+        service.sendCreation(body: data) { result in
+            switch result {
+            case .success(let data):
+                print(data)
+                self.navigationController?.mainViewController?.handleNextState()
+            case .failure(let exception):
+                print(exception)
+                self.navigationController?.mainViewController?.handleNextState()
+            }
         }
     }
 
