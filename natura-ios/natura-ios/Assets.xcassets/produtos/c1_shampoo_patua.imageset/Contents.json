@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "Cabelo - EKOS - SHAMPOO PATAUÁ-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Cabelo - EKOS - SHAMPOO PATAUÁ-1.png",
+      "filename" : "c1_shampoo_patua.imageset.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

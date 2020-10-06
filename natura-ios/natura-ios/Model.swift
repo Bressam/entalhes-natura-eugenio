@@ -30,7 +30,7 @@ enum ProductCategory: String, Codable {
         case .cabelo:
             return "c1_shampoo_patua"
         case .rosto:
-            return "r1_elixir_rugas"
+            return "r1_agua_miscelar"
         case .perfumaria:
             return "p1_biografia"
         case .maquiagem:
@@ -90,8 +90,10 @@ struct DataModel {
     private init() {
         let cabelo = [
             Product(name: "EKOS: Shampoo Patuá", description: "Shampoo/Condicionar", image: "c1_shampoo_patua"),
-            Product(name: "Lumina: Máscara fortificante", description: "Máscara de tratamento", image: "c2_lumina_mascara"),
-            Product(name: "PLANT: Perfume para cabelo Inspira", description: "Perfume para cabelo", image: "c3_perfunte_plant_inspira")]
+            Product(name: "LUMINA: Máscara fortificante cabelos crespos", description: "Máscara fortificante", image: "c2_lumina_mascara_cabelos_crespos"),
+            Product(name: "LUMINA: Condicionador provitalidade", description: "Condicionador", image: "c3_condicionador_provitalidade"),
+            Product(name: "EKOS: Shampoo Morumoru", description: "Shampoo", image: "c4_shampoo_morumoru"),
+            Product(name: "PLANT: Condicionador hidratação reparadora", description: "Condicionador", image: "c5_condicionador_hidratacao_reparadora")]
         
         let maquiagem = [
             Product(name: "Aquarela: Pincel, pó e blush", description: "Pincel, pó e blush aquarela", image: "m1_pincel_blush_aquarela"),
@@ -99,11 +101,10 @@ struct DataModel {
             Product(name: "UNA: Maxxi Palette de sombras - 12 tons intensa una", description: "Paleta de sombras", image: "m3_paleta_maxxi")]
         
         let rosto = [
-            Product(name: "Chronos: Elixir redutor de rugas", description: "Elixir redutor de rugas faciais", image: "r1_elixir_rugas"),
-            Product(name: "Chronos: Esfoliante antissinais", description: "Esfoliante antissinais", image: "r2_esfoliante_antissinais"),
-            Product(name: "Chronos: Máscara de Argila Purificante", description: "Máscara facial", image: "r3_chronos_mascara"),
-            Product(name: "Chronos: Elixir redutor de rugas", description: "Elixir redutor de rugas faciais", image: "r3_elixir_rugas"),
-            Product(name: "Faces: Sabonete gel para o rosto", description: "Sabonete gel", image: "r4_sabonete_gel")]
+            Product(name: "CHRONOS: Água micelar purificante ", description: "Água micelar CHRONOS", image: "r1_agua_miscelar"),
+            Product(name: "CHRONOS: Espuma de limpeza suave", description: "Espuma de limpeza CHRONOS", image: "r2_espuma_limpeza_suave"),
+            Product(name: "CHRONOS: Sistema de tratamento antissinais", description: "Tratamento antissinais CHRONOS", image: "r3_tratamento_antissinais"),
+            Product(name: "CHRONOS: Tônico Detox adstringente", description: "Tônico detox CHRONOS", image: "r4_tonico_detox_adistringente")]
         
         let perfumaria = [
             Product(name: "BIOGRAFIA: Perfume BIOGRAFIA feminino", description: "Perfume Feminino", image: "p1_biografia"),
