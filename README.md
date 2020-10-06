@@ -3,7 +3,7 @@ Projeto do Eugenio Challenge - Natura
 
 # Natura Entalhes
 
-É um projeto que propõe a customização das embalagens produtos Natura (principalmente, os que possuem a opção de refil) atráves da gravaç"ao
+É um projeto que propõe a customização das embalagens produtos Natura (principalmente, os que possuem a opção de refil) atráves da gravação a laser configuradas pelo aplicativo para iPad instalados em cada loja Natura e conectados entre si via plataforma Eugenio.
 
 ## Em natura-ios ##
 
