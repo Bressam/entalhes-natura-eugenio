@@ -1,24 +1,18 @@
-# eugenio-natura
-Projeto do Eugenio Challenge - Natura
+# Natura & Eugenio Hackathon Challenge
 
-# Natura Entalhes
+Prize winning project: This project got first place at the hackathon, and was developed during few days of the challenge.
+Please check the video below!
 
-É um projeto que propõe a customização das embalagens produtos Natura (principalmente, os que possuem a opção de refil) atráves da gravação a laser configuradas pelo aplicativo para iPad instalados em cada loja Natura e conectados entre si via plataforma Eugenio.
+## Demo Video
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=t4mm1bJZej0"><img src="https://img.youtube.com/vi/t4mm1bJZej0/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
-## Em natura-ios ##
+## Team members
+Adonay G. P.
 
-Projeto Xcode desenvolvido em Swift, feito para iPad. 
+Filipe S. C.
 
-Demo:
+Giovanne B. G.
 
-https://www.youtube.com/watch?v=t4mm1bJZej0&ab_channel=GiovanneBressam
-
-## Miscelânea
-
-* UI Design
-
-Arquivo .sketch do protótipo para iPad;
-
-* 3D & Renders
-
-Resultados dos renderes da bancada 3D feito no blender.
+Rodolfo D. P.
